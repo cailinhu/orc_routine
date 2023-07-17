@@ -54,7 +54,7 @@ public class CaptureTool extends Frame implements MouseListener, MouseMotionList
 	JRadioButtonMenuItem pressEnterSave, pressEnterCopy;
 	JCheckBoxMenuItem exitAfterSave, exitAfterCopy;
 	// options
-	private boolean doubleClickSaveFlag = true, doubleClickCopyFlag;
+	private boolean doubleClickSaveFlag , doubleClickCopyFlag= true;
 	private boolean pressEnterSaveFlag, pressEnterCopyFlag = true;
 	private boolean exitAfterSaveFlag = true, exitAfterCopyFlag = true;
 	private static final int double_Click_Save_Code = 0x11;
@@ -112,7 +112,6 @@ public class CaptureTool extends Frame implements MouseListener, MouseMotionList
 		saveItem.addActionListener(new MyTakePicture());
 		copyItem = new JMenuItem("复制  (Ctrl+C)");
 		copyItem.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-//		copyItem.addActionListener(new ImageListener());
 		copyItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BufferedImage sbi;
@@ -121,7 +120,6 @@ public class CaptureTool extends Frame implements MouseListener, MouseMotionList
 				} else {
 					sbi = bi;
 				}
-				System.out.println("cai-->识别图片");
 				//识别图片
 				StringBuilder builder = new StringBuilder();
 				try {

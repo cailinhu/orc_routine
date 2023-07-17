@@ -9,9 +9,7 @@ import cn.hutool.json.JSONUtil;
 import com.clh.bean.OrcResult;
 import okhttp3.*;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -28,10 +26,10 @@ public class BaiduOcrUtil {
     private  static  String CLIENT_ID;
     private  static String CLIENT_SECRET;
     static {
-        try {
-            ClassPathResource resource = new ClassPathResource("ocr_config.properties");
+        File cfgFile = new File("config/ocr_config.properties");
+        try( FileInputStream fis = new FileInputStream(cfgFile);) {
             Properties properties = new Properties();
-            properties.load(resource.getStream());
+            properties.load(fis);
             CLIENT_ID=properties.getProperty("client_id");
             CLIENT_SECRET=properties.getProperty("client_secret");
         }catch (Exception e){
@@ -61,6 +59,9 @@ public class BaiduOcrUtil {
     }
 
     public static OrcResult orcResult(OutputStream outputStream) throws IOException {
+        if (StrUtil.isEmpty(CLIENT_ID)||StrUtil.isEmpty(CLIENT_SECRET)){
+            return OrcResult.builderExceptionResult();
+        }
         String code = getFileContentAsBase64Urlencoded(outputStream);
         OrcResult orcResult = getOrcResult(code);
         return orcResult;

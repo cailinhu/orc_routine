@@ -120,7 +120,6 @@ public class GUIExample {
         @Override
         public void nativeKeyPressed(NativeKeyEvent e) {
             // 键盘按下事件
-            System.out.println("按键按下: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
             if (e.getRawCode()==115) {
                 StartCapture(textArea);
             }

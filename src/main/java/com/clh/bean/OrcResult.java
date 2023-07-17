@@ -2,6 +2,7 @@
   * Copyright 2023 bejson.com
   */
 package com.clh.bean;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,6 +12,14 @@ import java.util.List;
  * @website http://www.bejson.com/java2pojo/
  */
 public class OrcResult {
+
+    public static OrcResult builderExceptionResult(){
+        WordsResult wordsResult=  new WordsResult();
+        wordsResult.setWords("配置文件异常!请检查config目录下的ocr_config.properties文件");
+        OrcResult result =new OrcResult();
+        result.setWords_result(Arrays.asList(wordsResult));
+        return result;
+    }
 
     private List<WordsResult> words_result;
     private int wordsResult_num;
