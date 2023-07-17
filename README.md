@@ -6,20 +6,16 @@
 
 ####	
 
-<img src="C:\Users\78500\AppData\Roaming\Typora\typora-user-images\image-20230714174849442.png" alt="image-20230714174849442" style="zoom:80%;" />
+![输入图片说明](img/image-20230714174849442.png)
 
-
-
-<img src="C:\Users\78500\AppData\Roaming\Typora\typora-user-images\image-20230714175026029.png" alt="image-20230714175026029" style="zoom:80%;" />
-
+![输入图片说明](img/image-20230714175026029.png)
 ## 使用说明：
 
-​	需要在`resources`路径下的`ocr_config.properties`面配置百度OCR所需要的参数
+​	需要在`config`路径下的`ocr_config.properties`面配置百度OCR所需要的参数
 
 
 
-<img src="C:\Users\78500\AppData\Roaming\Typora\typora-user-images\image-20230714175337703.png" alt="image-20230714175337703" style="zoom: 80%;" />
-
+![输入图片说明](img/image-20230714175337703.png)
 
 
 配置好了之后我们就可以愉快的使用啦！
