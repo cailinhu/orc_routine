@@ -5,12 +5,9 @@
 ## 软件截图：
 
 ####	
+![输入图片说明](img/image-20230714174849442.png)
 
-<img src="C:\Users\78500\AppData\Roaming\Typora\typora-user-images\image-20230714174849442.png" alt="image-20230714174849442" style="zoom:80%;" />
-
-
-
-<img src="C:\Users\78500\AppData\Roaming\Typora\typora-user-images\image-20230714175026029.png" alt="image-20230714175026029" style="zoom:80%;" />
+![输入图片说明](img/image-20230714175026029.png)
 
 ## 使用说明：
 
@@ -18,7 +15,7 @@
 
 
 
-<img src="C:\Users\78500\AppData\Roaming\Typora\typora-user-images\image-20230714175337703.png" alt="image-20230714175337703" style="zoom: 80%;" />
+![输入图片说明](img/image-20230714175337703.png)
 
 
 
