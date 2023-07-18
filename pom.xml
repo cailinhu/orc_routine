@@ -29,7 +29,11 @@
             <artifactId>jnativehook</artifactId>
             <version>2.2.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -38,27 +42,56 @@
     </properties>
     <build>
         <plugins>
-            <!-- 配置maven-compiler-plugin编译插件 -->
+            <!-- Maven Assembly Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4.1</version>
                 <configuration>
-                    <source>1.8</source> <!-- 设置Java版本 -->
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <!-- 配置maven-jar-plugin打包插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
+                    <!-- get all project dependencies -->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                     <archive>
                         <manifest>
                             <mainClass>com.clh.GUIExample</mainClass> <!-- 设置入口类 -->
                         </manifest>
                     </archive>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <!-- bind to the packaging phase -->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
+        <!--        <plugins>-->
+        <!--            &lt;!&ndash; 配置maven-compiler-plugin编译插件 &ndash;&gt;-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--                <configuration>-->
+        <!--                    <source>1.8</source> &lt;!&ndash; 设置Java版本 &ndash;&gt;-->
+        <!--                    <target>1.8</target>-->
+        <!--                </configuration>-->
+        <!--            </plugin>-->
+        <!--            &lt;!&ndash; 配置maven-jar-plugin打包插件 &ndash;&gt;-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-jar-plugin</artifactId>-->
+        <!--                <configuration>-->
+        <!--                    <archive>-->
+        <!--                        <manifest>-->
+        <!--                            <mainClass>com.clh.GUIExample</mainClass> &lt;!&ndash; 设置入口类 &ndash;&gt;-->
+        <!--                        </manifest>-->
+        <!--                    </archive>-->
+        <!--                </configuration>-->
+        <!--            </plugin>-->
+        <!--        </plugins>-->
     </build>
 </project>
